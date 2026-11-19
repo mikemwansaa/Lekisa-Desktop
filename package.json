@@ -1,0 +1,33 @@
+{
+  "name": "lekisa-desktop",
+  "productName": "Lekisa",
+  "version": "2026.11.3",
+  "description": "Lekisa for Windows. Desktop version of the Lekisa pilot app, sharing the same Supabase backend as the mobile app.",
+  "main": "main.js",
+  "author": "Akivara Technologies",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "sync": "node scripts/sync-core.js",
+    "start": "electron .",
+    "dist": "node scripts/sync-core.js --optional && electron-builder --win --x64 --publish never"
+  },
+  "devDependencies": {
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.akivara.lekisa.desktop",
+    "productName": "Lekisa",
+    "directories": { "output": "dist", "buildResources": "build" },
+    "files": ["main.js", "desktop/**/*", "package.json"],
+    "win": { "target": [{ "target": "nsis", "arch": ["x64"] }], "icon": "build/icon.png" },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "shortcutName": "Lekisa",
+      "artifactName": "Lekisa-Setup-${version}.${ext}"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Lekisa</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src https://*.supabase.co; object-src 'none'; base-uri 'none'; form-action 'none'">
+<link rel="stylesheet" href="mobile-base.css">
+<link rel="stylesheet" href="desk.css">
+</head>
+<body>
+<div id="splash"><img src="logo.jpg" alt="Lekisa. Sell. Track. Grow. Comply."></div>
+<div id="app"></div>
+<div id="pr"></div>
+<div id="lockscreen" aria-modal="true" role="dialog" aria-labelledby="locktitle"><div class="lockwrap"><div class="hero"><h1>Lekisa</h1><p>Sell. Track. Grow. Comply.</p></div><div class="card wallet"><h2 id="locktitle" style="margin:0;font-size:22px;letter-spacing:0;text-transform:none;color:var(--fg)">Hi there</h2><p class="small" style="margin-top:2px">Welcome back</p><form id="unlockform"><label>Passphrase<input id="unlockpass" type="password" autocomplete="current-password" maxlength="128" required></label><p id="unlockerror" class="err" role="alert"></p><button class="btn" type="submit">Login</button></form><button id="lockout" class="link" type="button" style="margin-top:10px">Not you? Log out of this device</button></div></div></div>
+<script src="core.js" defer></script>
+<script src="desk.js" defer></script>
+</body>
+</html>
